@@ -31,7 +31,7 @@ $Clients = $Persistencia->ClientStaffALL(3);
         </thead>
 
         <tbody>
-        	<?php while($RegistClientAll = mysql_fetch_array($Clients)){?>
+        	<?php while($RegistClientAll = mysqli_fetch_array($Clients)){?>
             
             <tr>
                 <td class="center">

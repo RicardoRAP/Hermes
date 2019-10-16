@@ -36,7 +36,7 @@ $Tickets = $Persistencia->TicketsALLStatus2(1,2);
         </thead>
 
         <tbody>
-			<?php while($RegistTickets = mysql_fetch_array($Tickets)){?>
+			<?php while($RegistTickets = mysqli_fetch_array($Tickets)){?>
             <tr>
                 <td class="center">
                     <label class="pos-rel">

@@ -195,7 +195,7 @@ $Clients_Staff = $Persistencia->ClientStaffID($_REQUEST['id']);
 					</thead>
 
 					<tbody>
-						<?php while($RegistTickets = mysql_fetch_array($Tickets)){?>
+						<?php while($RegistTickets = mysqli_fetch_array($Tickets)){?>
 						<tr>
 							<th class="center">
 								<label class="pos-rel">
@@ -263,7 +263,7 @@ $Clients_Staff = $Persistencia->ClientStaffID($_REQUEST['id']);
 					</thead>
 
 					<tbody>
-						<?php while($RegistFactura = mysql_fetch_array($Factura)){?>
+						<?php while($RegistFactura = mysqli_fetch_array($Factura)){?>
 						<tr onclick="javascript: openwindow(<?php echo $RegistFactura['id'] ?>)">
 							<th class="center">
 								<label class="pos-rel">

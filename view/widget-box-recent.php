@@ -25,7 +25,7 @@ $Staff = $Persistencia->ClientStaffALL(2);
 
 					<div id="member-tab" class="tab-pane active">
 						<div class="clearfix">
-                        	<?php while($RegistClientAll = mysql_fetch_array($Clients)){?>
+                        	<?php while($RegistClientAll = mysqli_fetch_array($Clients)){?>
 							<div class="itemdiv memberdiv">
 								<div class="user">
 									<img alt="Bob Doe's avatar" src="../assets/images/avatars/avatar2.png" />
