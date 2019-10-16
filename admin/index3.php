@@ -60,11 +60,11 @@
 						url:  './cliente.php',
 						data: {"tipo":tipo,"cod":cod,"rif":rif,"comprador":comprador,"fecha":fecha,"productos":productos,"direc":direc},
 						success: function(data) {
-							//json_data = JSON.parse(data);
+							json_data = JSON.parse(data);
 							console.log(data);
-							//$("#fechafin").html(json_data.fechaF)
-							//$("#costo").html(json_data.costo)
-							//$("#error").html(json_data.error)
+							$("#fechafin").html(json_data.fechaF)
+							$("#costo").html(json_data.costo)
+							$("#error").html(json_data.error)
 						},
 						error: function(data){
 							console.log("Error: ", data);
@@ -122,7 +122,7 @@
             $Persistencia = new Persistencia();
 			
 			$TicketsActive = $Persistencia->TicketsCOUNTAR(1,2);
-			$TicketsActiveRow = (mysql_num_rows($TicketsActive));
+			$TicketsActiveRow = (mysqli_num_rows($TicketsActive));
         ?>
 		<?php include('../view/navbar.php'); ?>
 
@@ -155,7 +155,7 @@
                                         <h3>Identificador de la confirmacion (solo si el servicio es de confirmacion, sino dejelo en blanco)</h3>
                                         <input type="number" id="codigo" name="codigo" value=" "> <!--identificador de la solicitud para la confirmacion-->
                                         <h3>RIF de la tienda</h3>
-                                        <input type="number" id="rif" name="rif" value="0"> <!--identificador de la tienda-->
+                                        <input type="number" id="rif" name="rif" value="123456788"> <!--identificador de la tienda-->
                                         <h3>Identificador del comprador de la tienda</h3>
                                         <input type="number" id="comprador" name="comprador" value="0"> <!--identificador del comprador de la tienda-->
                                         <h3>Fecha en que se realiza el servicio</h3>
@@ -163,7 +163,7 @@
                                         <h3>Direccion del comprador (solo si el servicio es de solicitud, sino dejelo en blanco)</h3>
                                         <input  id="direc" name="direc" value="distrito capital"> <!--Direccion del comprador-->
                                         <h3>Array de los identificadores de los productos (solo si el servicio es de solicitud, sino dejelo en blanco)</h3>
-                                        <textarea id="productos" name="productos">1</textarea> <!--Array de los productos solicitados-->
+                                        <input id="productos" name="productos" value="0"><!--Array de los productos solicitados-->
                                         
                                     </center>
                                     <br>

@@ -15,7 +15,7 @@ function MiFuncion($tipo, $cod, $rif, $comprador, $fecha){
 	$respuesta = array(
 		'tipo' => $tipo,
 		'ID' => '0', //Identificador de la confirmacion
-		'cod' => $cod,
+		'cod' => $cod, //Identificador de la solicitud
 		'rif' => $rif,
 		'comprador' => $comprador,
 		'fecha' => $fecha,

@@ -97,8 +97,8 @@
 						url:  'http://bankoneapi.16mb.com/api/bill',
 						data: {"emitter":emitter,"receiver":receiver,"bill_ref_cod":bill_ref_cod,"amount":amount,"expdate":expdate,"description":description},
 						success: function(data) {
-							//json_data = JSON.parse(data);
 							console.log(data);
+							$("#respuesta").html(data.message)
 						},
 						error: function(data){
 							console.log("Error: ", data);
@@ -122,7 +122,7 @@
             $Persistencia = new Persistencia();
 			
 			$TicketsActive = $Persistencia->TicketsCOUNTAR(1,2);
-			$TicketsActiveRow = (mysql_num_rows($TicketsActive));
+			$TicketsActiveRow = (mysqli_num_rows($TicketsActive));
         ?>
 		<?php include('../view/navbar.php'); ?>
 
@@ -161,6 +161,7 @@
 										</center>
 										<br>
 										<center><button type="button" onclick="Factura()">Emitir</button></center><br>
+										<div id="respuesta"></div>
 									</form>
 								</div>
 							</div>

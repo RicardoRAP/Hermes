@@ -56,7 +56,7 @@
             $Persistencia = new Persistencia();
 			
 			$TicketsActive = $Persistencia->TicketsCOUNTAR(1,2);
-			$TicketsActiveRow = (mysql_num_rows($TicketsActive));
+			$TicketsActiveRow = (mysqli_num_rows($TicketsActive));
         ?>
 		<?php include('../view/navbar.php'); ?>
 

@@ -12,12 +12,6 @@ $servicio->register("MiFuncion", array('tipo' => 'xsd:string','rif' => 'xsd:int'
 
 function MiFuncion($tipo,$rif,$comprador,$fecha,$productos,$direc){
 	
-		include('../config/conexao.php');
-		include('../config/config.php');
-		
-		$Tickets = new Tickets();
-		$Persistencia = new Persistencia();
-	
 	$error = " ";
 	$costo = 0;
 	$nuevafecha = strtotime('+30 day',strtotime($fecha));
@@ -112,14 +106,18 @@ function MiFuncion($tipo,$rif,$comprador,$fecha,$productos,$direc){
 			'Estatus' => "Entrante",
 			'error' => $error,
 		);
+		include('../config/conexao.php');
+		include('../config/config.php');
+		
+		$Tickets = new Tickets();
+		$Persistencia = new Persistencia();
 
-	
-	 $Tickets->rifempresa=$rif;
-	 $Tickets->DirDestino=$direc;
-	 $Tickets->datee=$fecha;
-	 $Tickets->producto=$producto;
-	 $Tickets->precio=$costo;
-	 $Persistencia->GuardarTickets($Tickets);
+	 	$Tickets->rifempresa = $rif;
+	 	$Tickets->DirDestino = $direc;
+		$Tickets->datee = $fecha;
+		$Tickets->producto = $productos;
+	 	$Tickets->precio = $costo;
+	 	$Persistencia->GuardarTickets($Tickets);
 
 	}else{
 		$respuesta = array('error' => $error);
